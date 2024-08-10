@@ -33,14 +33,14 @@ class Game:
                 if len(pawns_to_kill) == 1:
                     pawns_to_kill[0].position = 0
 
-    def move(self, pawn_number, steps):
-        if pawn_number.has_finished():
+    def move(self, pawn, steps):
+        if pawn.has_finished():
             raise ValueError("pawn already at home")
-        if not pawn_number.has_started():
+        if not pawn.has_started():
             raise ValueError("pawn not open")
-        if pawn_number.has_started() == True:
-            pawn_number.position += steps
-            pawn_number.board_position += steps
+        if pawn.has_started() == True:
+            pawn.position += steps
+            pawn.board_position += steps
 
     def turn_completed(self):
         if not self.dice.can_roll and self.dice.results_used:

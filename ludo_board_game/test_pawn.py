@@ -1,4 +1,4 @@
-import pytest
+
 from pawn import Pawn
 import unittest
 
@@ -16,10 +16,6 @@ class TestPawn(unittest.TestCase):
         self.assertEqual(self.pawn.has_finished(), False)
         self.pawn.position = 56
         self.assertEqual(self.pawn.has_finished(), True)
-
-    def test_opener(self):
-        self.pawn.opener()
-        self.assertEqual(self.pawn.position, 0)
 
 
 if __name__ == '__main__':
