@@ -16,9 +16,11 @@ def get_players():
         sys.exit("Value must be integer ranging from 1 - 4")
     return num_of_players
 def run_game(game):
-    print(f"{game.active_player.}'s turn!")
-
-
+    print(f"Player # {game.active_player.number} please roll the dice")
+    while True:
+        _ = input('roll dice? (Y/N)').strip().upper()
+        if _ == 'Y':
+            game.
 
 if __name__ == "__main__":
     main()
