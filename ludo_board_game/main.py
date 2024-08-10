@@ -18,11 +18,11 @@ def get_players():
 def run_game(game):
 
     print(f"Player # {game.active_player.number} please roll the dice")
-    while True:
+    while game.dice.can_roll() :
         _ = input('press Enter to roll').strip()
         if _ == '':
             num = game.dice.roll()
             print(f"You rolled a {num}!!!")
-        
+
 if __name__ == "__main__":
     main()
