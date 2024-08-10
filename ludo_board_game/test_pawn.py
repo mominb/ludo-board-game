@@ -18,13 +18,8 @@ class TestPawn(unittest.TestCase):
         self.assertEqual(self.player.pawns[0].has_finished(), True)
 
     def test_board_position(self):
-        positions = []
-        i = 0
-        for pawn in self.player.pawns:
-            i += 1
-            pawn.position += i
-            positions.append(pawn.position)
-        print(positions)
+        self.player.pawns[1].position = 10
+        self.assertEqual(self.player.pawns[1].board_position)
 
 
 if __name__ == '__main__':
