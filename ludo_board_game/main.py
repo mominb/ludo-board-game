@@ -1,5 +1,8 @@
 from game import Game
 import sys
+import inflect
+
+p = inflect.engine()
 
 
 def main():
@@ -25,7 +28,7 @@ def run_game(game):
         _ = input("press Enter to roll").strip()
 
         num = game.dice.roll()
-        print(f"You rolled a {num} !!!")
+        print(f"You rolled a {p.number_to_words(num)} !!!")
 
 
 if __name__ == "__main__":
