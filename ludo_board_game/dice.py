@@ -30,7 +30,7 @@ class Dice:
         if not self.can_roll():
             raise ValueError("Cannot roll because stats", self._stats())
 
-        number = random.randint(1, 6)
+        number = random.randint(5, 6)
 
         self.roll_results.append(RollResult(number))
 
@@ -45,11 +45,9 @@ class Dice:
         self.roll_results = []
 
     def can_open_pawn(self):
-        i = 0
         for num in self.roll_results:
             if num.result == 6:
-                i += 1
-                return True, i
+                return True
             else:
                 return False
 

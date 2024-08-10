@@ -58,9 +58,9 @@ class TestDice(unittest.TestCase):
 
     def test_can_open_pawn(self):
         self.dice.roll_results = [RollResult(6), RollResult(5)]
-        self.assertEqual(self.dice.can_open_pawn()[0], True)
+        self.assertEqual(self.dice.can_open_pawn(), True)
         self.dice.roll_results = [RollResult(1)]
-        self.assertEqual(self.dice.can_open_pawn()[0], False)
+        self.assertEqual(self.dice.can_open_pawn(), False)
 
 
 if __name__ == '__main__':
