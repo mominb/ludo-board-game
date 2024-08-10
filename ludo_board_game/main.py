@@ -3,19 +3,19 @@ import sys
 
 
 def main():
-    print(get_info())
+    game = Game(get_players)
 
 
-def get_info():
+def get_players():
     try:
-        num_of_players = int(input('How many players? ').strip())
+        num_of_players = int(input("How many players? ").strip())
         if num_of_players > 4:
             raise ValueError
 
     except ValueError:
-        sys.exit('Value must be integer ranging from 1 - 4')
+        sys.exit("Value must be integer ranging from 1 - 4")
     return num_of_players
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
