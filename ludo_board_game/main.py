@@ -4,9 +4,11 @@ import inflect
 
 p = inflect.engine()
 
+game = Game(get_players())
+
 
 def main():
-    game = Game(get_players())
+
     run_game(game)
 
 
@@ -29,6 +31,9 @@ def run_game(game):
 
         num = game.dice.roll()
         print(f"You rolled a {p.number_to_words(num)} !!!")
+    if game.dice.voided():
+        print("Your turn was voided :(")
+        game.change_turn()
     if game.dice.can_open_pawn():
         pawn_to_open = int(
             input('Which pawn would you like to open? ').strip())
