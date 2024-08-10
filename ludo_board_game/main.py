@@ -6,6 +6,7 @@ def main():
     game = Game(get_players())
     run_game(game)
 
+
 def get_players():
     try:
         num_of_players = int(input("How many players? ").strip())
@@ -15,14 +16,17 @@ def get_players():
     except ValueError:
         sys.exit("Value must be integer ranging from 1 - 4")
     return num_of_players
+
+
 def run_game(game):
 
     print(f"Player # {game.active_player.number} please roll the dice")
-    while game.dice.can_roll() :
-        _ = input('press Enter to roll').strip()
-        if _ == '':
-            num = game.dice.roll()
-            print(f"You rolled a {num}!!!")
+    while game.dice.can_roll() and not game.dice.voided():
+        _ = input("press Enter to roll").strip()
+
+        num = game.dice.roll()
+        print(f"You rolled a {num} !!!")
+
 
 if __name__ == "__main__":
     main()
