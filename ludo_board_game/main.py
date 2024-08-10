@@ -4,11 +4,9 @@ import inflect
 
 p = inflect.engine()
 
-game = Game(get_players())
-
 
 def main():
-
+    game = Game(get_players())
     run_game(game)
 
 

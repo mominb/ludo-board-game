@@ -46,7 +46,7 @@ class Dice:
 
     def can_open_pawn(self):
         for num in self.roll_results:
-            if num.result == 6:
+            if num.result == 6 and not self.voided():
                 return True
             else:
                 return False
