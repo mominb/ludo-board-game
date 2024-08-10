@@ -16,7 +16,7 @@ def get_players():
         sys.exit("Value must be integer ranging from 1 - 4")
     return num_of_players
 def run_game(game):
-    print(f"{game.active_player}'s turn!")
+    print(f"{game.active_player.}'s turn!")
 
 
 
