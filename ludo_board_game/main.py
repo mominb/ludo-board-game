@@ -37,5 +37,5 @@ def run_game(game):
             input('Which pawn would you like to open? ').strip())
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     main()
