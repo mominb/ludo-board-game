@@ -1,10 +1,10 @@
 from game import Game
 import sys
 
-
+game = None
 def main():
-    game = Game(get_players)
-
+    game = Game(get_players())
+    
 
 def get_players():
     try:
