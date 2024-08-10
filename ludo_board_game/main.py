@@ -25,7 +25,7 @@ def run_game(game):
     print(f"Player # {game.active_player.number} please roll the dice")
     while game.dice.can_roll() and not game.dice.voided():
         _ = input("press Enter to roll").strip()
-
+       `
         num = game.dice.roll()
         print(f"You rolled a {p.number_to_words(num)} !!!")
     if game.dice.voided():
