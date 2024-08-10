@@ -29,7 +29,7 @@ def run_game(game):
 
         num = game.dice.roll()
         print(f"You rolled a {p.number_to_words(num)} !!!")
-
+    if
 
 if __name__ == "__main__":
     main()

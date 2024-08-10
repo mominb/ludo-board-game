@@ -44,6 +44,15 @@ class Dice:
     def reset(self):
         self.roll_results = []
 
+    def can_open_pawn(self):
+        i = 0
+        for num in self.roll_results:
+            if num.result == 6:
+                i += 1
+                return True, i
+            else:
+                return False
+
 
 class RollResult:
     def __init__(self, result):
