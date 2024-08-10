@@ -19,10 +19,10 @@ def run_game(game):
 
     print(f"Player # {game.active_player.number} please roll the dice")
     while True:
-        _ = input('roll dice').strip().upper()
-        if _ == 'Y':
+        _ = input('press Enter to roll').strip()
+        if _ == '':
             num = game.dice.roll()
             print(f"You rolled a {num}!!!")
-        elif _ == 'N'
+        
 if __name__ == "__main__":
     main()
