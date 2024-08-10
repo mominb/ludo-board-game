@@ -1,4 +1,4 @@
-
+from player import Player
 from pawn import Pawn
 import unittest
 
