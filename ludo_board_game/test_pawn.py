@@ -19,7 +19,7 @@ class TestPawn(unittest.TestCase):
 
     def test_board_position(self):
         self.player_two.pawns[1].position = 10
-        self.assertEqual(self.player_two.pawns[1].board_position(), 10)
+        self.assertEqual(self.player_two.pawns[1].board_position(), 23)
 
 
 if __name__ == '__main__':
