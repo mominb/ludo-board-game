@@ -45,7 +45,7 @@ def run_game(game):
     print(f"Player # {p.number_to_words(game.active_player.number)}'s turn\n")
 
     roll(game)
-def ask_player
+def ask_playerif we
 
 if __name__ == "__main__":
     main()
