@@ -36,7 +36,7 @@ def roll(game):
         num = game.dice.roll()
         print(f"You rolled a {p.number_to_words(num)} !!!\n")
     if game.dice.voided():
-        print("Sorry you turn is voided 😔\n\n\n")
+        print("\033[31mSorry your turn is voided 😔\033[0m\n\n\n")
         game.dice.reset()
         game.change_turn_voided()
         new_turn(game)
