@@ -20,8 +20,13 @@ def ask_to_move(game): ...
 
 
 def ask_to_open(game):
-    pawn_to_open = int(input("which pawn do you want to open? \n").strip())
-    game.active_player.pawns[pawn_to_open - 1].position = 1
+    if game.active_player.pawn_positions_on_board() != [0, 0, 0, 0]:
+        bool = input(
+            "\033[33mWould you like to open a pawn? \033[0m\n").strip().lower()
+        if bool == 'yes':
+            pawn_to_open = int(
+                input("\033[33mWhich pawn do you want to open? \033[0m\n").strip())
+        else:
 
 
 def roll(game):
@@ -45,7 +50,7 @@ def run_game(game):
     roll(game)
     if game.dice.can_open_pawn():
         ask_to_open(game)
-    elif game.active_player.pawn_positions_on_board() == [0, 0, 0, 0]:
+    elif not game.dice.can_open_pawn() and game.active_player.pawn_positions_on_board() == [0, 0, 0, 0]:
         game.force_change_turn()
         new_turn(game)
     else:
