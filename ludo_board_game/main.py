@@ -32,7 +32,7 @@ def ask_to_open(game):
 
 def roll(game):
     while game.dice.can_roll() and not game.dice.voided():
-        input("press Enter to roll dice\n")
+        input("\033[33mpress Enter to roll dice\033[0m\n")
         num = game.dice.roll()
         print(f"\033[32mYou rolled a {p.number_to_words(num)} !!!\033[0m\n")
     if game.dice.voided():
@@ -43,8 +43,8 @@ def roll(game):
 
 
 def run_game(game):
-    print(f"PLAYER # {p.number_to_words(
-        game.active_player.number).upper()}'S TURN\n")
+    print(f"\033[33mPLAYER # {p.number_to_words(
+        game.active_player.number).upper()}'S TURN\033[0m\n")
     roll(game)
     ask_to_open(game)
 
