@@ -59,7 +59,8 @@ class Game:
 
     def change_turn_voided(self):
         index = self.active_player_index()
-        if index <= len(self.players)-1:
+        _ = len(self.players) - 1
+        if index <=  _:
             self.active_player = self.players[self.active_player_index() + 1]
         else:
             self.active_player = self.players[0]
