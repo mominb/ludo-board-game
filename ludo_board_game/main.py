@@ -16,17 +16,23 @@ def get_num_players():
     return number
 
 
+def ask_to_move(game): ...
+
+
 def ask_to_open(game):
-    if game.dice.can_open_pawn() and game.active_player.pawn_positions_on_board() == [0, 0, 0, 0]:
-        pawn_to_open = int(
-            input("which pawn do you want to open? \n").strip())
+    if game.dice.can_open_pawn() and game.active_player.pawn_positions_on_board() == [
+        0,
+        0,
+        0,
+        0,
+    ]:
+        pawn_to_open = int(input("which pawn do you want to open? \n").strip())
         game.active_player.pawns[pawn_to_open - 1].position = 1
     else:
 
         open = input("would you like to open a pawn? \n").strip().lower()
         if open == "yes":
-            pawn_to_open = int(
-                input("which pawn do you want to open? \n").strip())
+            pawn_to_open = int(input("which pawn do you want to open? \n").strip())
             game.active_player.pawns[pawn_to_open - 1].position = 1
 
 
@@ -37,20 +43,25 @@ def roll(game):
         print(f"\033[32mYou rolled a {p.number_to_words(num)} !!!\033[0m\n")
     if game.dice.voided():
         print("\033[31mSorry your turn is voided 😔\033[0m\n\n\n")
-        game.dice.reset()
-        game.change_turn_voided()
+        game.force_change_turn()
         new_turn(game)
     else:
         ask_to_open(game)
 
 
 def run_game(game):
-    print(f"\033[33mPLAYER # {p.number_to_words(
-        game.active_player.number).upper()}'S TURN\033[0m\n")
+    print(
+        f"\033[33mPLAYER # {p.number_to_words(
+        game.active_player.number).upper()}'S TURN\033[0m\n"
+    )
     roll(game)
     if game.dice.can_open_pawn():
         ask_to_open(game)
-    elif active:
+    elif game.active_player.pawn_positions_on_board() == [0, 0, 0, 0]:
+        game.force_change_turn()
+        new_turn(game)
+    else:
+        ask_to_move(game)
 
 
 def new_turn(game):

@@ -56,10 +56,12 @@ class Game:
     def change_turn(self):
         if self.turn_completed():
             self.active_player = self.players[self.active_player_index() + 1]
+        self.dice.reset()
 
-    def change_turn_voided(self):
+    def force_change_turn(self):
         index = self.active_player_index()
         if index == len(self.players) - 1:
             self.active_player = self.players[0]
         else:
             self.active_player = self.players[self.active_player_index() + 1]
+        self.dice.reset()
