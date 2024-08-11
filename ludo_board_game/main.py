@@ -20,26 +20,8 @@ def ask_to_move(game): ...
 
 
 def ask_to_open(game):
-    if game.dice.can_open_pawn() and game.active_player.pawn_positions_on_board() == [
-        0,
-        0,
-        0,
-        0,
-    ]:
-        pawn_to_open = int(input("which pawn do you want to open? \n").strip())
-        game.active_player.pawns[pawn_to_open - 1].position = 1
-    elif game.active_player.pawn_positions_on_board() != [
-        0,
-        0,
-        0,
-        0,
-    ]:
-
-        open = input("would you like to open a pawn? \n").strip().lower()
-        if open == "yes":
-            pawn_to_open = int(
-                input("which pawn do you want to open? \n").strip())
-            game.active_player.pawns[pawn_to_open - 1].position = 1
+    pawn_to_open = int(input("which pawn do you want to open? \n").strip())
+    game.active_player.pawns[pawn_to_open - 1].position = 1
 
 
 def roll(game):
