@@ -8,7 +8,7 @@ class Game:
 
     def __init__(self, playerCount):
         self.players = []
-
+        self.number_of_players = playerCount
         for _ in range(playerCount):
             self.players.append(Player())
 
@@ -59,8 +59,8 @@ class Game:
 
     def change_turn_voided(self):
         index = self.active_player_index()
-        _ = len(self.players) - 1
-        if index <=  _:
+
+        if index <= self.number_of_players:
             self.active_player = self.players[self.active_player_index() + 1]
         else:
             self.active_player = self.players[0]

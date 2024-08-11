@@ -41,7 +41,6 @@ def roll(game):
         game.change_turn_voided()
         new_turn(game)
 
-
 def run_game(game):
     print(f"\033[33mPLAYER # {p.number_to_words(
         game.active_player.number).upper()}'S TURN\033[0m\n")
