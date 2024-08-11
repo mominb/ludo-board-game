@@ -34,7 +34,7 @@ def ask_to_roll(game): ...
 
 def roll(game):
     while game.dice.can_roll() and not game.dice.voided():
-        _ = input("press Enter to roll").strip()
+        _ = input("press Enter to roll dice").strip()
 
         num = game.dice.roll()
         print(f"You rolled a {p.number_to_words(num)} !!!")
@@ -42,8 +42,7 @@ def roll(game):
 
 def run_game(game):
     print(f"Player # {p.number_to_words(game.active_player.number)}'s turn")
-    input("press Enter to roll dice. ")
-    roll()
+    roll(game)
 
 
 if __name__ == "__main__":
