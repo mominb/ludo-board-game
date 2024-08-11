@@ -17,18 +17,7 @@ def get_num_players():
 
 
 def ask_to_open(game):
-    if game.dice.can_open_pawn() and not game.dice.voided():
-        if game.active_player.pawn_positions_on_board == []:
-            pawn_to_open = int(
-                input("which pawn do you want to open? \n").strip())
-            game.active_player.pawns[pawn_to_open - 1].position = 1
-        else:
-            open = input("would you like to open a pawn? \n").strip().lower()
-            if open == "yes":
-                pawn_to_open = int(
-                    input("which pawn do you want to open? \n").strip())
-                game.active_player.pawns[pawn_to_open - 1].position = 1
-
+    if game.dice.can_open_pawn()
 
 def roll(game):
     while game.dice.can_roll() and not game.dice.voided():
