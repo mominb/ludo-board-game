@@ -8,9 +8,9 @@ p = inflect.engine()
 def main():
     game = Game(get_num_players())
     input("Press Enter to start game.\n")
-
     run_game(game)
-
+def new_turn():
+    run_game(game)
 
 def get_num_players():
     number = int(input("How many players? \n").strip())
@@ -40,7 +40,7 @@ def roll(game):
         print("Sorry you turn is voided 😔")
         game.change_turn_voided()
         print(game.active_player)
-
+        new_turn()
 
 def run_game(game):
     print(f"Player # {p.number_to_words(game.active_player.number)}'s turn\n")
