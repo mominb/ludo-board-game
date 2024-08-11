@@ -21,6 +21,7 @@ def ask_to_move(game):
 
 
 def ask_to_open(game):
+    print("ask_to_open is called")
     if game.active_player.pawn_positions_on_board() != [0, 0, 0, 0]:
         bool = input(
             "\033[33mWould you like to open a pawn? \033[0m\n").strip().lower()
@@ -29,7 +30,7 @@ def ask_to_open(game):
                 input("\033[33mWhich pawn do you want to open? \033[0m\n").strip())
         else:
             ask_to_move(game)
-    else:
+    elif game.active_player.pawn_positions_on_board() == [0, 0, 0, 0]:
         pawn_to_open = int(
             input("\033[33mWhich pawn do you want to open? \033[0m\n").strip())
 
