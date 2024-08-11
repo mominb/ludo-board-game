@@ -34,7 +34,7 @@ def roll(game):
     while game.dice.can_roll() and not game.dice.voided():
         input("press Enter to roll dice\n")
         num = game.dice.roll()
-        print(f"You rolled a {p.number_to_words(num)} !!!\n")
+        print(f"\033[32mYou rolled a {p.number_to_words(num)} !!!\033[0m\n")
     if game.dice.voided():
         print("\033[31mSorry your turn is voided 😔\033[0m\n\n\n")
         game.dice.reset()
