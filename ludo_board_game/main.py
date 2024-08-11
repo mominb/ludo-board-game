@@ -44,8 +44,6 @@ def roll(game):
         print("\033[31mSorry your turn is voided 😔\033[0m\n\n\n")
         game.force_change_turn()
         new_turn(game)
-    # else:
-    #     ask_to_open(game)
 
 
 def run_game(game):
@@ -56,12 +54,10 @@ def run_game(game):
     roll(game)
     if game.dice.can_open_pawn():
         ask_to_open(game)
-        
+
     elif not game.dice.can_open_pawn() and game.active_player.pawn_positions_on_board() == [0, 0, 0, 0]:
         game.force_change_turn()
         new_turn(game)
-    else:
-        ask_to_move(game)
 
 
 def new_turn(game):
