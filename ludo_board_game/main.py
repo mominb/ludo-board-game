@@ -56,6 +56,7 @@ def run_game(game):
     roll(game)
     if game.dice.can_open_pawn():
         ask_to_open(game)
+        
     elif not game.dice.can_open_pawn() and game.active_player.pawn_positions_on_board() == [0, 0, 0, 0]:
         game.force_change_turn()
         new_turn(game)
