@@ -16,7 +16,8 @@ def get_num_players():
     return number
 
 
-def ask_to_move(game): ...
+def ask_to_move(game):
+    print('ask to move is called')
 
 
 def ask_to_open(game):
@@ -27,6 +28,10 @@ def ask_to_open(game):
             pawn_to_open = int(
                 input("\033[33mWhich pawn do you want to open? \033[0m\n").strip())
         else:
+            ask_to_move(game)
+    else:
+        pawn_to_open = int(
+            input("\033[33mWhich pawn do you want to open? \033[0m\n").strip())
 
 
 def roll(game):
