@@ -30,7 +30,7 @@ class Dice:
         if not self.can_roll():
             raise ValueError("Cannot roll because stats", self._stats())
 
-        number = random.randint(6, 6)
+        number = random.randint(1, 6)
 
         self.roll_results.append(RollResult(number))
 

@@ -40,7 +40,8 @@ def roll(game):
         game.dice.reset()
         game.change_turn_voided()
         new_turn(game)
-
+    else:
+        ask_to_open(game)
 
 def run_game(game):
     print(f"\033[33mPLAYER # {p.number_to_words(
