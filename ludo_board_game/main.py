@@ -31,17 +31,19 @@ def ask_to_open(game):
 
 def roll(game):
     while game.dice.can_roll() and not game.dice.voided():
-
+        input("press Enter to roll dice\n")
 
         num = game.dice.roll()
         print(f"You rolled a {p.number_to_words(num)} !!!\n")
     if game.dice.voided():
         print("Sorry you turn is voided 😔")
         game.change_turn()
-        run_game(game)
+        print(game.active_player)
+
+
 def run_game(game):
     print(f"Player # {p.number_to_words(game.active_player.number)}'s turn\n")
-    input("press Enter to roll dice\n")
+
     roll(game)
 
 
