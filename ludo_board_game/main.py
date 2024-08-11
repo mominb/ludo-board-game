@@ -22,7 +22,7 @@ def ask_to_open(game):
             input("which pawn do you want to open? \n").strip())
         game.active_player.pawns[pawn_to_open - 1].position = 1
     else:
-        print(game.active_player.pawn_positions_on_board())
+
         open = input("would you like to open a pawn? \n").strip().lower()
         if open == "yes":
             pawn_to_open = int(
@@ -48,7 +48,9 @@ def run_game(game):
     print(f"\033[33mPLAYER # {p.number_to_words(
         game.active_player.number).upper()}'S TURN\033[0m\n")
     roll(game)
-    ask_to_open(game)
+    if game.dice.can_open_pawn():
+        ask_to_open(game)
+    elif active:
 
 
 def new_turn(game):
