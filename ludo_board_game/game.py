@@ -43,7 +43,7 @@ class Game:
             pawn.board_position += steps
 
     def turn_completed(self):
-        if not self.dice.can_roll and (self.dice.results_used or self.dice.voided()):
+        if not self.dice.can_roll and self.dice.results_used:
             return True
         else:
             return False
@@ -56,3 +56,6 @@ class Game:
     def change_turn(self):
         if self.turn_completed():
             self.active_player = self.players[self.active_player_index() + 1]
+
+    def change_turn_voided(self):
+        self.active_player = self.players[self.active_player_index() + 1]

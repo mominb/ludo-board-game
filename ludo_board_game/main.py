@@ -38,8 +38,7 @@ def roll(game):
         print(f"You rolled a {p.number_to_words(num)} !!!\n")
     if game.dice.voided():
         print("Sorry you turn is voided 😔")
-        print(game.turn_completed())
-        game.change_turn()
+        game.change_turn_voided()
         print(game.active_player)
 
 
