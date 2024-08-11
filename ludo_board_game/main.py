@@ -44,8 +44,6 @@ def roll(game):
         print("\033[31mSorry your turn is voided 😔\033[0m\n\n\n")
         game.force_change_turn()
         new_turn(game)
-    else:
-        ask_to_open(game)
 
 
 def run_game(game):
