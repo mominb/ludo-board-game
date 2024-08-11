@@ -28,8 +28,6 @@ def ask_to_open(game):
         pawn_to_open = int(input("which pawn do you want to open? \n").strip())
         game.active_player.pawns[pawn_to_open - 1].position = 1
 
-waow
-
 
 
 def roll(game):
